@@ -1,0 +1,51 @@
+diff --git a/test/nasTestpacket/fuzz_parse_test.go b/test/nasTestpacket/fuzz_parse_test.go
+new file mode 100644
+--- /dev/null
++++ b/test/nasTestpacket/fuzz_parse_test.go
+@@ -0,0 +1,46 @@
++package nasTestpacket
++
++import (
++	"testing"
++
++	"github.com/free5gc/nas/message"
++)
++
++const maxNASFuzzInputBytes = 4096
++
++func FuzzParseGMM(f *testing.F) {
++	for _, seed := range [][]byte{
++		GetRegistrationComplete(nil),
++		GetSecurityModeReject(0x18),
++		GetStatus5GMM(0x2b),
++		{0x7e, 0x00, 0x43},
++		{},
++	} {
++		f.Add(seed)
++	}
++
++	f.Fuzz(func(t *testing.T, input []byte) {
++		if len(input) > maxNASFuzzInputBytes {
++			t.Skip()
++		}
++		_, _ = message.ParseGMM(input)
++	})
++}
++
++func FuzzParseGSM(f *testing.F) {
++	for _, seed := range [][]byte{
++		GetPduSessionReleaseRequest(10),
++		GetStatus5GSM(10, 0x2b),
++		{0x2e, 0x01, 0x00},
++		{},
++	} {
++		f.Add(seed)
++	}
++
++	f.Fuzz(func(t *testing.T, input []byte) {
++		if len(input) > maxNASFuzzInputBytes {
++			t.Skip()
++		}
++		_, _ = message.ParseGSM(input)
++	})
++}

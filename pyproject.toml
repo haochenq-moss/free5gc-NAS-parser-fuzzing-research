@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "free5gc-security-lab"
+version = "0.1.0"
+description = "Defensive free5GC NAS parser fuzzing and isolated security research tooling"
+requires-python = ">=3.9"
+readme = "README.md"
+dependencies = []
+
+[project.scripts]
+free5gc-lab = "free5gc_security_lab.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

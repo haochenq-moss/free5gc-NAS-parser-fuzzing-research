@@ -1,0 +1,14 @@
+{
+  "free5gc_repository": "https://github.com/free5gc/free5gc.git",
+  "free5gc_ref": "",
+  "vendor_directory": "vendor/free5gc",
+  "experiment_network": "isolated-free5gc-lab",
+  "telemetry": {
+    "sbi_events": "data/raw/sbi-events.jsonl",
+    "detections": "data/results/detections.jsonl"
+  },
+  "safety": {
+    "synthetic_identifiers_only": true,
+    "production_network_allowed": false
+  }
+}
