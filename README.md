@@ -9,6 +9,7 @@ The broader NRF registration-poisoning, AI detection, automated mitigation, and 
 - [Documentation index](docs/README.md): guides grouped by purpose.
 - [AFL++ Go NAS parser guide](docs/afl_go_parser.md): target behavior and QEMU setup.
 - [Multi-model seed study](docs/afl_multimodel_study.md): paired design, commands, and interpretation limits.
+- [Fuzz-to-NWDAF evidence handoff](docs/fuzz_to_nwdaf_handoff.md): safe evidence linkage to the separate NWDAF analytics project and current replay boundary.
 - [Architecture and implementation status](docs/ARCHITECTURE.md): what exists versus what is planned.
 - [Research plan](docs/RESEARCH_PLAN.md): proposed future phases and exit evidence.
 - [Curated NAS seed suite](data/raw/nas_seed_suite_20261002/seeds.json): 16 GMM/GSM seed records and categories.

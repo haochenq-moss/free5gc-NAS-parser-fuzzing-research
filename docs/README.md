@@ -4,6 +4,7 @@
 
 - [AFL++ Go NAS parser guide](afl_go_parser.md): Go parser adapter, AFL++ QEMU requirements, and basic run setup.
 - [Multi-model seed study](afl_multimodel_study.md): paired comparison design, seed preparation, Slurm execution, and interpretation caveats.
+- [Fuzz-to-NWDAF evidence handoff](fuzz_to_nwdaf_handoff.md): record linkage, review gates, and the missing live NAS replay adapter boundary.
 - Curated seed input: [`data/raw/nas_seed_suite_20261002/seeds.json`](../data/raw/nas_seed_suite_20261002/seeds.json).
 
 ## Project Scope and Roadmap
